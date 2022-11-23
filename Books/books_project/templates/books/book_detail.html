@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ book_id.title }}{% endblock title %}
+{% block content %}
+<div class="book-detail">
+    <img class="bookcover" src="{{ book_id.cover.url}}" alt="{{ book_idtitle }}">
+<h2><a href="">{{ book_id.title }}</a></h2>
+<p>Author: {{ book_id.author }}</p>
+<p>Price: {{ book_id.price }}</p>
+
+{% for cm in review %}
+<h3>Review</h3>
+<ul>
+    <li>
+        {{cm.review}} 
+        author: {{cm.author}}
+    </li>
+</ul>
+   
+{% endfor %}
+<br>
+
+</div>
+<buttom class="btn btn-primary"> <a href="{% url 'book-list'%}">Go Back</a> </buttom>
+{% endblock content %}

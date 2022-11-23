@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Books{% endblock title %}
+{% block content %}
+{% for book in form %}
+<div>
+<h2><a href="{% url 'book-detail' book.id%}">{{ book.title }}</a></h2>
+</div>
+{% endfor %}
+{% endblock content %}
